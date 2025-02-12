@@ -1,287 +1,296 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
-    margin:0;
-    
+  margin: 0;
+
 }
 
 .sarina-regular {
-    font-family: "Sarina", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Sarina", serif;
+  font-weight: 400;
+  font-style: normal;
+  /* Lettertype van Google-fonts */
+}
 
-
-  
-
+/* BOVENWATER */
 
 .bovenwater {
-    display: grid;
-    grid-template-rows:
-        1fr
-        1fr;
+  display: grid;
+  grid-template-rows:
+    1fr 1fr;
+  justify-items: center;
+  height: 100vh;
+  background-image: radial-gradient(circle at 50% 100%,
+      white 0%,
+      rgb(255, 225, 0) 10%,
+      rgb(255, 204, 0) 20%,
+      coral 30%,
+      rgb(84, 202, 249));
 
-    justify-items: center;
-    height: 100vh;
-    background-image: radial-gradient(circle at 50% 100%,
-        white 0%,
-        rgb(255, 225, 0) 10%,
-        rgb(255, 204, 0) 20%,
-        coral 30%,
-        rgb(84, 202, 249));
-  
-    scroll-snap-align: start;
-    
-}
-
-.bovenwater h1{
-    width:100%;
-    text-align: center;
-    color: gold;
-    text-shadow: 3.5px 3px 0px coral;
-    font-size:3em;
-    font-family: "Sarina", serif;
-    transform: skewY(-2deg);
-    align-self:self-start;
-}
-
-.avatar{
-    position:fixed;
-    height:43%;
-   /* max-width: 40%;
-   max-height: 35%;
-   margin-top: 15em; */
-   z-index: 1;
-
-   top:calc(50dvh);
-   translate:0 -45%;
-}
-
-.snorkel{
-    z-index: 2;
-    height: 28%;
-    /* max-width: 11em;
-    margin-left: 0.5em; */
-    /* width: 30%; */
-    /* margin-top:-1.3em;
-    margin-bottom: 2.5em; */
-    opacity: 95%;
-    filter: drop-shadow(5px 5px 5px #222222b5);
+  scroll-snap-align: start;
 
 }
 
- .scrollpijl  {
-    cursor: pointer;
-    height:8em;
-    align-self: end;
-    transition:all ease-in 0.2s;  
+.bovenwater h1 {
+  width: 100%;
+  text-align: center;
+  color: gold;
+  text-shadow: 3.5px 3px 0px coral;
+  font-size: 3em;
+  font-family: "Sarina", serif;
+  transform: skewY(-2deg);
+  align-self: self-start;
+}
+
+.avatar {
+  position: fixed;
+  height: 43%;
+  z-index: 1;
+  top: calc(50dvh);
+  translate: 0 -45%;
+}
+
+.snorkel {
+  z-index: 2;
+  height: 29%;
+  margin-left: 0.8em;
+  opacity: 95%;
+  filter: drop-shadow(5px 5px 5px #222222b5);
+  /* Filter drop-shadow van GetcssScan.com */
+}
+
+.scrollpijl {
+  cursor: pointer;
+  height: 8em;
+  align-self: end;
+  transition: all ease-in 0.2s;
 }
 
 .scrollpijl:hover {
-   transform:scale(1.3);
+  transform: scale(1.3);
 }
 
 
- .scrollpijl img {
-    height:100%;
+.scrollpijl img {
+  height: 100%;
 }
 
-
-
-
-.bovenwater img{
-    /* height:100%; */
+section:nth-of-type(1) img:nth-of-type(2) {
+  width: 15%;
+  margin-top: 2em;
 }
-
-
-
-section:nth-of-type(1) img:nth-of-type(2){
-    width: 15%;
-    margin-top: 2em;
-}
-
 
 
 /* ONDERWATER */
 
 .onderwater {
   position: relative;
-    height: 100vh;
-    background-image:
-    linear-gradient(
-       #acfef1,
-        #61f5dc,
-        #11f3ff,
-        #30daea,
-        #0f1c85
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-align: start;
+  height: 100vh;
+  background-image:
+    linear-gradient(#acfef1,
+      #61f5dc,
+      #11f3ff,
+      #30daea,
+      #0f1c85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+/* INFOBOXEN JS OP VIS */
+
+.infobox {
+  width: 15em;
+  min-height: 5em;
+  display: none;
+  background-color: aliceblue;
+  position: absolute;
+  bottom: 7em;
+  left: -3em;
+  border-radius: 1em;
+  opacity: 0.9;
+
+
+  color: coral;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  &.active {
+    display: block;
+  }
+}
+
+.haai .infobox {
+  bottom: 10.5em;
 }
 
 
+.infobox ul {
+  padding-left: 1em;
+  padding-right: 1em;
+}
 
 
-
-  .infobox{
-    width: 15em;
-    min-height: 5em;
-    /* height: 8em; */
-    display: none;
-    background-color: aliceblue;
-    position: absolute;
-    bottom:7em;
-    left:-3em;
-    border-radius: 1em;
-    opacity: 0.9;
-    
-
-    color:coral;
-    padding-left: 1em;
-    padding-top: 0.5em;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-    &.active{
-        display:block;
-    }
-  }
-
-  .haai .infobox{
-    bottom:10.5em;
-  }
-
-  .infobox ul{
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-
-
-.relative{
-    position:relative;
+.relative {
+  position: relative;
 
 }
 
+/* VISSEN EN ANIMATIES */
 
 .vis {
   position: absolute;
-  left:-8em;
-  top:70vh;
+  left: -8em;
+  top: 70vh;
 
-  animation: move 6s linear infinite;
-  img{
-      width:8em;
+  animation: move 30s linear infinite;
+
+  @media (prefers-reduced-motion:no-preference) {
+    animation-duration: 10s;
+  }
+
+  img {
+    width: 8em;
 
   }
 }
+
+/* Op elke vis zit een snelheid voor de animatie, dus hoe snel hij over de breedte van het scherm gaat
+en een prefers-reduced-motion media tag. Dit zorgt ervoor dat mensen die minder snel kunnen lezen of de vissen 
+kunnen aanklikken meer tijd krijgen om dit te doen.*/
+
 
 @keyframes move {
   0% {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
+
   100% {
-    transform: translateX(calc(100vw + 8em));  
+    transform: translateX(calc(100vw + 8em));
   }
 }
 
 
+.dikkevis {
+  position: absolute;
+  left: -5em;
+  top: 57vh;
 
-  .dikkevis{
-    position: absolute;
-    left:-5em;
-    top:57vh;
+  animation: moveright 40s linear infinite;
 
-    animation: moveright 8s linear infinite;
-    img{
-      width: 7em;
-    }
-
-
+  @media (prefers-reduced-motion:no-preference) {
+    animation-duration: 12s;
   }
 
 
-  @keyframes moveright {
-    100% {
-      transform: translateX(0); 
-    }
-    0% {
-      transform: translateX(120vw);  
-    }
-  
+  img {
+    width: 7em;
   }
 
+
+}
+
+
+@keyframes moveright {
+  100% {
+    transform: translateX(0);
+  }
+
+  0% {
+    transform: translateX(120vw);
+  }
+
+}
 
 
 .haai {
   position: absolute;
-  left:-15em;
-  top:1vh;
+  left: -15em;
+  top: 1vh;
 
-  animation: moverightt 6s linear infinite;
-  img{
-      width:15em;
+  animation: moverightt 30s linear infinite;
+
+  @media (prefers-reduced-motion:no-preference) {
+    animation-duration: 10s;
+  }
+
+  img {
+    width: 15em;
 
   }
 }
 
 @keyframes moverightt {
   100% {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
+
   0% {
-    transform: translateX(calc(100vw + 8em));  
+    transform: translateX(calc(100vw + 8em));
   }
 }
-  
+
 
 .blauwgelevis {
   position: absolute;
-  left:-8em;
-  top:22vh;
+  left: -8em;
+  top: 22vh;
 
-  animation: move 8s linear infinite;
-  img{
-      width:6em;
+  animation: move 40s linear infinite;
+
+  @media (prefers-reduced-motion:no-preference) {
+    animation-duration: 12s;
+  }
+
+
+  img {
+    width: 6em;
 
   }
 }
 
 @keyframes move {
   0% {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
+
   100% {
-    transform: translateX(calc(100vw + 8em));  
+    transform: translateX(calc(100vw + 8em));
   }
 }
-
-
 
 .engevis {
   position: absolute;
-  left:-8em;
-  bottom:0vh;
+  left: -8em;
+  bottom: 0vh;
 
-  animation: move 8s linear infinite;
-  img{
-      width:7em;
+  animation: move 40s linear infinite;
+
+  @media (prefers-reduced-motion:no-preference) {
+    animation-duration: 12s;
+  }
+
+  img {
+    width: 7em;
 
   }
 }
 
 @keyframes move {
   0% {
-    transform: translateX(0); 
+    transform: translateX(0);
   }
+
   100% {
-    transform: translateX(calc(100vw + 8em));  
+    transform: translateX(calc(100vw + 8em));
   }
 }

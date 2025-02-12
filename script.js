@@ -1,27 +1,22 @@
-// window.addEventListener("load", (event) => {
-//     setVariabele()
-// })
-
-// function setVariabele(){
-//     var infoBox = document.getElementById("infoBox");
-// }
 
 const baseURL = 'https://fdnd.directus.app/';
 const endpointMe = 'items/person/211';
 
 const myUrl = baseURL + endpointMe;
 
+// Ik link de url van de api en mijn persoonlijke nummer aan elkaar waardoor het "mijn persoonlijke" url word.
 
-async /*9*/ function getData(URL) {
-    return ( //8
-        fetch(URL) //1
-        .then( //2
-            response /*3*/ => response.json() //4
+
+async function getData(URL) {
+    return ( 
+        fetch(URL) 
+        .then( 
+            response  => response.json() 
         )
-        .then( //5
-            jsonData /*6*/ => {
+        .then( 
+            jsonData  => {
                 return jsonData
-            } //7
+            } 
         )
     );
 }
@@ -50,14 +45,12 @@ function getMyName() {
 
         infoBox3.textContent = myName;
 
-        console.log(myName);
     });
 }
 
-
-
-
-
+// De functie haalt de data op uit de "mijn url" die ik net aan elkaar heb gekoppeld, 
+// de querySelector haalt de class infoBox3 op uit de html en ik geef aan door het = teken,
+// dat de text content van infoBox3 gevuld moet worden met de data uit de myName.
 
 
 function openInfoBox(obj) {
